@@ -25,10 +25,15 @@ body {
     margin-bottom: 20px;
   }
   
-  .logo {
-    width: 150px; /* Adjust logo size */
-    height: auto;
+  /* Logo styling */
+.logo {
+    width: 150px; /* Adjust the width of the logo */
+    height: 150px; /* Adjust the height to make it a square */
+    border-radius: 50%; /* Makes the logo circular */
+    object-fit: cover; /* Ensures the logo fits within the circular shape */
+    margin-bottom: 20px; /* Space between logo and form */
   }
+  
   
   /* Faculty Form Styling */
   .faculty-form {

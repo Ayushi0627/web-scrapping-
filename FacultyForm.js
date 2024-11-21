@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './FacultyForm.css'; // Import CSS for styling
+import logo from './logo.png'; 
 
 const App = () => {
   const [facultyName, setFacultyName] = useState('');
@@ -56,31 +57,30 @@ const App = () => {
     <div className="App">
       {/* Logo at the top */}
       <div className="logo-container">
-        <img src="\logo.png" alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
       </div>
 
       <div className="faculty-form">
-        <h2>Faculty Form</h2>
+        
         <h3>Where Knowledge Meets Collaboration</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-inputs">
-            {/* Faculty Name Input */}
-            <div>
-              <label>Faculty Name:</label>
-              <input
-                type="text"
-                value={facultyName}
-                onChange={(e) => setFacultyName(e.target.value)}
-                placeholder="Enter faculty name"
-                list="faculty-names"
-                required
-              />
-              <datalist id="faculty-names">
-                {Object.keys(facultyLinks).map((faculty, index) => (
-                  <option key={index} value={faculty} />
-                ))}
-              </datalist>
-            </div>
+              {/* Faculty Name Dropdown */}
+  <div>
+    <label>Faculty Name:</label>
+    <select
+      value={facultyName}
+      onChange={(e) => setFacultyName(e.target.value)}
+      required
+    >
+      <option value="">Select a Faculty</option>
+      {Object.keys(facultyLinks).map((faculty, index) => (
+        <option key={index} value={faculty}>
+          {faculty}
+        </option>
+      ))}
+    </select>
+  </div>
 
             {/* Department Dropdown */}
             <div>
